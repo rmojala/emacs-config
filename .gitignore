@@ -2,3 +2,4 @@
 /eln-cache/
 /straight/*
 !/straight/versions/
+/transient/

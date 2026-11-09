@@ -68,7 +68,7 @@
   :straight t
 
   :config
-  (load-theme 'modus-operandi-tinted :no-confirm))
+  (load-theme 'modus-operandi-tinted t))
 
 (use-package orderless
   ;; Completion style that matches multiple regexps in any order.

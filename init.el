@@ -52,6 +52,12 @@
   :bind
   ("C-x g" . magit-status))
 
+(use-package modus-themes
+  :straight t
+
+  :config
+  (load-theme 'modus-operandi-tinted :no-confirm))
+
 (use-package xclip
   :straight t
 

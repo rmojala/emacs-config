@@ -21,7 +21,6 @@
 (use-package emacs
   :hook
   (before-save . delete-trailing-whitespace)
-  (git-commit-mode . display-fill-column-indicator-mode)
   (prog-mode . display-fill-column-indicator-mode)
 
   :custom

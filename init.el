@@ -61,7 +61,22 @@
   ("M-g g" . consult-goto-line)
   ("M-s g" . consult-ripgrep)
   ("M-s l" . consult-line)
-  ("M-y" . consult-yank-pop))
+  ("M-y" . consult-yank-pop)
+
+  :init
+  (unless (or (executable-find "fd") (executable-find "fdfind"))
+    (display-warning 'consult
+                     "fd not found on PATH. consult-fd will not work.
+Install it with:
+Fedora: sudo dnf install fd-find
+Ubuntu: sudo apt install fd-find"))
+
+  (unless (executable-find "rg")
+    (display-warning 'consult
+                     "rg not found on PATH. consult-ripgrep will not work.
+Install it with:
+Fedora: sudo dnf install ripgrep
+Ubuntu: sudo apt install ripgrep")))
 
 (use-package dired
   :hook

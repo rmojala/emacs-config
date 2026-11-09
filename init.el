@@ -50,6 +50,15 @@
   (global-hl-line-mode 1)
   (tooltip-mode -1))
 
+(use-package dired
+  :hook
+  (dired-mode . dired-hide-details-mode)
+
+  :custom
+  (dired-dwim-target t)
+  (dired-free-space nil)
+  (dired-kill-when-opening-new-dired-buffer t))
+
 (use-package magit
   :straight t
 

@@ -26,7 +26,7 @@
   (auto-revert-verbose nil)
   (auto-save-default nil)
   (create-lockfiles nil)
-  (custom-file (expand-file-name "customizations.el" user-emacs-directory))
+  (custom-file (locate-user-emacs-file "customizations.el"))
   (global-auto-revert-non-file-buffers t)
   (inhibit-startup-echo-area-message user-login-name)
   (inhibit-startup-screen t)

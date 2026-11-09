@@ -70,6 +70,16 @@
   :config
   (load-theme 'modus-operandi-tinted :no-confirm))
 
+(use-package orderless
+  ;; Completion style that matches multiple regexps in any order.
+  :straight t
+
+  :custom
+  (completion-category-defaults nil)
+  (completion-category-overrides '((file (styles partial-completion))))
+  (completion-pcm-leading-wildcard t)
+  (completion-styles '(orderless basic)))
+
 (use-package rainbow-delimiters
   :straight t
 

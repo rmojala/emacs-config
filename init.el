@@ -47,7 +47,21 @@
   (blink-cursor-mode -1)
   (global-auto-revert-mode 1)
   (global-hl-line-mode 1)
+  (recentf-mode 1)
   (tooltip-mode -1))
+
+(use-package consult
+  ;; Search and navigate via completing-read.
+  :straight t
+
+  :bind
+  ("C-x b" . consult-buffer)
+  ("C-x p b" . consult-project-buffer)
+  ("C-x p f" . consult-fd)
+  ("M-g g" . consult-goto-line)
+  ("M-s g" . consult-ripgrep)
+  ("M-s l" . consult-line)
+  ("M-y" . consult-yank-pop))
 
 (use-package dired
   :hook

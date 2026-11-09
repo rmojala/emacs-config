@@ -1,6 +1,7 @@
 (("bind-key" . "6ff8788e347ce31b5c3c4647c2e22e7ee2c5ab7c")
  ("compat" . "9f8a565ad8c9617a6f006115f50f4cf63286ec83")
  ("cond-let" . "09292a77001434f59ab55c775dec2b98cb18d028")
+ ("consult" . "a64569f377b8bc0f62e1d2ae0f3ee48ba4a7cc1c")
  ("el-get" . "5c1e9c10860f35a1ee6e56b8d19505913b1c2ff2")
  ("emacsmirror-mirror" . "8b7ffadbaf97c4ff0e4ac39d8f33e2d595960240")
  ("gnu-elpa-mirror" . "4e4beacfef8f697e8fbf26cf1c6f28c10b378635")

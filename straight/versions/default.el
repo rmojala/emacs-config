@@ -6,6 +6,7 @@
  ("gnu-elpa-mirror" . "4e4beacfef8f697e8fbf26cf1c6f28c10b378635")
  ("llama" . "6850d0c91b629da14fdff2300c222289d1a0029a")
  ("magit" . "602760478f6d4a67e7064f5bcd2e294aa3f38f8e")
+ ("marginalia" . "381af583d2530796b9955ff2fe0cba3ad3119943")
  ("melpa" . "3abc8c7bbd6a936dc934f5dae20c8b12a8111a89")
  ("modus-themes" . "782743415b3eedac0b99db2342fb35703deb752f")
  ("nongnu-elpa" . "9b4684a9e33df2aabcbee85bd23e7386ca3f4273")

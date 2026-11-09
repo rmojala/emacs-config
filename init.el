@@ -64,6 +64,13 @@
   :bind
   ("C-x g" . magit-status))
 
+(use-package marginalia
+  ;; Adds marginalia to minibuffer completions.
+  :straight t
+
+  :init
+  (marginalia-mode))
+
 (use-package modus-themes
   :straight t
 

@@ -21,12 +21,15 @@
 (use-package emacs
   :hook
   (before-save . delete-trailing-whitespace)
+  (git-commit-mode . display-fill-column-indicator-mode)
+  (prog-mode . display-fill-column-indicator-mode)
 
   :custom
   (auto-revert-verbose nil)
   (auto-save-default nil)
   (create-lockfiles nil)
   (custom-file (locate-user-emacs-file "customizations.el"))
+  (display-fill-column-indicator-column 80)
   (global-auto-revert-non-file-buffers t)
   (inhibit-startup-echo-area-message user-login-name)
   (inhibit-startup-screen t)

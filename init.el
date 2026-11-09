@@ -70,6 +70,12 @@
   :config
   (load-theme 'modus-operandi-tinted :no-confirm))
 
+(use-package rainbow-delimiters
+  :straight t
+
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
+
 (use-package vertico
   ;; Vertico provides a vertical completion UI based on the default
   ;; completion system.

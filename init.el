@@ -87,8 +87,7 @@
   (prog-mode . rainbow-delimiters-mode))
 
 (use-package vertico
-  ;; Vertico provides a vertical completion UI based on the default
-  ;; completion system.
+  ;; Vertical completion UI based on the default completion system.
   :straight t
 
   :config

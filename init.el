@@ -70,6 +70,14 @@
   :config
   (load-theme 'modus-operandi-tinted :no-confirm))
 
+(use-package vertico
+  ;; Vertico provides a vertical completion UI based on the default
+  ;; completion system.
+  :straight t
+
+  :config
+  (vertico-mode))
+
 (use-package xclip
   :straight t
 

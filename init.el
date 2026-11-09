@@ -1,0 +1,67 @@
+;; -*- lexical-binding: t; -*-
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(straight-use-package 'use-package)
+
+(use-package emacs
+  :hook
+  (before-save . delete-trailing-whitespace)
+
+  :custom
+  (auto-revert-verbose nil)
+  (auto-save-default nil)
+  (create-lockfiles nil)
+  (custom-file (expand-file-name "customizations.el" user-emacs-directory))
+  (global-auto-revert-non-file-buffers t)
+  (inhibit-startup-echo-area-message user-login-name)
+  (inhibit-startup-screen t)
+  (initial-scratch-message nil)
+  (make-backup-files nil)
+  (require-final-newline t)
+  (ring-bell-function #'ignore)
+  (save-interprogram-paste-before-kill t)
+  (select-enable-clipboard t)
+  (select-enable-primary nil)
+  (use-dialog-box nil)
+  (use-file-dialog nil)
+  (use-short-answers t)
+
+  :config
+  (blink-cursor-mode -1)
+  (global-auto-revert-mode 1)
+  (tooltip-mode -1))
+
+(use-package magit
+  :straight t
+
+  :bind
+  ("C-x g" . magit-status))
+
+(use-package xclip
+  :straight t
+
+  :init
+  (unless (executable-find "xclip")
+    (display-warning 'clipboard
+                     "xclip not found on PATH. Clipboard integration will
+not work in terminal. Install it with:
+Fedora: sudo dnf install xclip
+Ubuntu: sudo apt install xclip"))
+
+  :config
+  (xclip-mode 1))

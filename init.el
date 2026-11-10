@@ -22,6 +22,7 @@
   :hook
   (before-save . delete-trailing-whitespace)
   (prog-mode . display-fill-column-indicator-mode)
+  (prog-mode . display-line-numbers-mode)
 
   :custom
   (auto-revert-verbose nil)
@@ -29,6 +30,7 @@
   (create-lockfiles nil)
   (custom-file (locate-user-emacs-file "customizations.el"))
   (display-fill-column-indicator-column 80)
+  (display-line-numbers-width 3)
   (global-auto-revert-non-file-buffers t)
   (inhibit-startup-echo-area-message user-login-name)
   (inhibit-startup-screen t)
@@ -42,9 +44,12 @@
   (use-dialog-box nil)
   (use-file-dialog nil)
   (use-short-answers t)
+  ;; TODO: Check if this is actually useful
+  (visible-cursor nil)
 
   :config
   (blink-cursor-mode -1)
+  (column-number-mode 1)
   (global-auto-revert-mode 1)
   (global-hl-line-mode 1)
   (recentf-mode 1)

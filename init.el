@@ -1,5 +1,11 @@
 ;; -*- lexical-binding: t; -*-
 
+;; Environment variables:
+;;
+;; NOTES_DIR  Directory used by Denote for notes (`denote-directory').
+;;            Defaults to ~/notes if unset or empty, and a warning is shown
+;;            at startup.
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name
@@ -82,6 +88,34 @@ Ubuntu: sudo apt install fd-find"))
 Install it with:
 Fedora: sudo dnf install ripgrep
 Ubuntu: sudo apt install ripgrep")))
+
+(use-package consult-denote
+  ;; Enhance Denote with previews and more.
+  :straight t
+  :after denote
+
+  :config
+  (consult-denote-mode 1))
+
+(use-package denote
+  ;; Simple note-taking with predictable file names.
+  :straight t
+
+  :hook
+  (dired-mode . denote-dired-mode)
+
+  :init
+  (when (member (getenv "NOTES_DIR") '(nil ""))
+    (display-warning 'denote
+                     "NOTES_DIR is not set. Using ~/notes as default.
+Set it in your environment, e.g.:
+export NOTES_DIR=~/notes"))
+
+  :custom
+  (denote-directory (file-name-as-directory
+                     (expand-file-name
+                      (let ((dir (getenv "NOTES_DIR")))
+                        (if (member dir '(nil "")) "~/notes" dir))))))
 
 (use-package dired
   :hook

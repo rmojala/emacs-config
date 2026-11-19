@@ -6,6 +6,18 @@
 ;;            Defaults to ~/notes if unset or empty, and a warning is shown
 ;;            at startup.
 
+;; External executables expected on PATH:
+;;
+;; fd     Used by `consult-fd' (called fdfind on Ubuntu).
+;; git    Used by straight.el to fetch packages and by Magit.
+;; rg     Used by `consult-ripgrep'.
+;; xclip  Clipboard integration in terminal Emacs.
+;;
+;; Install on Fedora:
+;;   sudo dnf install fd-find git ripgrep xclip
+;; Install on Ubuntu:
+;;   sudo apt install fd-find git ripgrep xclip
+
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name

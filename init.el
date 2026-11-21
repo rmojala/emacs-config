@@ -50,6 +50,7 @@
   (display-fill-column-indicator-column 80)
   (display-line-numbers-width 3)
   (global-auto-revert-non-file-buffers t)
+  (indent-tabs-mode nil)
   (inhibit-startup-echo-area-message user-login-name)
   (inhibit-startup-screen t)
   (initial-scratch-message nil)
